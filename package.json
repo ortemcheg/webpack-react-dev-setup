@@ -9,6 +9,7 @@
   "keywords": [],
   "author": "Tyoma Deev <tema@deev.ru>",
   "license": "MIT",
+  "browserslist": ["last 2 versions"],
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
