@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: "./source/index.js",
@@ -9,6 +10,10 @@ module.exports = {
   },
   module:{
     rules: [
+      {
+        test: /\.css$/,
+        use: [MiniCssExtractPlugin.loader, "css-loader"]
+      },
       {
         test: /\.(js$|jsx$)/,
         exclude: /node_modules/,
@@ -23,8 +28,12 @@ module.exports = {
       {
         inject: false,
         template: require('html-webpack-template'),
-        links: ['styles.css'],
         title: 'Testing My React Apps'
+      }
+    ),
+    new MiniCssExtractPlugin(
+      {
+        filename: "style.css"
       }
     )
   ]
