@@ -1,10 +1,13 @@
 ##Synopsis
+
 My webpack config for React Apps development.
 
 ##Motivation
+
 I created this project to deepen my understanding of webpack (and its loaders) and babel.
 
 ##Description
+
 The entry point is the `index.js` in the `source` folder. Webpack starts from there and pulls all of the project's modules together. The result (`bundle.js`) goes to the `dist` directory. I also use `HtmlWebpackPlugin` to generate an html file which links to the `bundle.js`.
 
 The `babel-loader` processes all JS and JSX files while Webpack is building the bundle. The loader uses Babel's core module and uses its config, the .babelrc file. I use two presets for Babel in that config.
